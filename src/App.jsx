@@ -1,22 +1,19 @@
-import { Container, VStack, Center, Text } from "@chakra-ui/react";
-
-
+import { Routes,Route } from "react-router-dom";
+import Nav from "./components/Nav/Navbar";
+import CekPenyakit from "./pages/CekPenyakit";
+import DaftarPenyakit from "./pages/DaftarPenyakit";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <Container w={"container.xl"} >
-      <VStack spacing={4} w={'full'} >
-        <Center w={"full"} bg={'gray.100'}>
-          <Text fontSize={"4xl"}>tes 1</Text>
-        </Center>
-        <Center w={"full"} bg={'gray.100'}>
-          <Text fontSize={"4xl"}>tes 2</Text>
-        </Center>
-        <Center w={"full"} bg={'gray.100'}>
-          <Text fontSize={"4xl"}>tes 3</Text>
-        </Center>
-      </VStack>
-    </Container>
+    <>
+    <Nav />
+    <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/CekPenyakit" element={<CekPenyakit />}/>
+      <Route path="/DaftarPenyakit" element={<DaftarPenyakit />}/>
+    </Routes>
+    </>
   );
 }
 
