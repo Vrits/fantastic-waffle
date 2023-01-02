@@ -190,34 +190,42 @@ const PenyakitProvider = (props) => {
     {
       code: "PD01",
       name: "Gingivitis (Radang gusi)",
+      premis: "GD01 GD02 GD03 GD04 GD05 GD06",
     },
     {
       code: "PD02",
       name: "Karies Gigi (gigi berlubang)",
+      premis: "GD07 GD08 GD09 GD10",
     },
     {
       code: "PD03",
       name: "Karang Gigi",
+      premis: "GD01 GD11 GD12 GD13 GD14 GD15 GD16",
     },
     {
       code: "PD04",
       name: "Stomatitis",
+      premis: "GD17 GD18 GD19 GD20 GD21",
     },
     {
       code: "PD05",
       name: "Abses Periodental",
+      premis: "GD01 GD22 GD23 GD24 GD05 GD25 GD26 GD27 GD28",
     },
     {
       code: "PD06",
       name: "Candidas Oral",
+      premis: "GD29 GD30 GD31 GD32 GD33 GD34",
     },
     {
       code: "PD07",
       name: "Trench Mouth",
+      premis: "GD01 GD23 GD24 GD05 GD25 GD27 GD28 GD35 GD36",
     },
     {
       code: "PD08",
       name: "Gigi Sensitif",
+      premis: "GD37 GD38 GD39 GD40",
       // hasPenyakit : selectedGejala.includes
     },
   ];

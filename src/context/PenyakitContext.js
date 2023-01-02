@@ -3,7 +3,8 @@ import React from "react";
 const PenyakitContext = React.createContext({
   penyakit: [{
     code : '',
-    name : ''
+    name : '',
+    premis: ''
   }],
   gejala: [{
     code : '',

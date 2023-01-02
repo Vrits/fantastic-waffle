@@ -40,9 +40,11 @@ const Nav = () => {
       bg={"whiteAlpha.300"}
       backdropFilter={"blur(4px)"}
     >
+      <Link to={'/'}>
       <Text fontSize="xl" fontWeight="bold">
         Sistem Pakar
       </Text>
+      </Link>
 
       <Spacer />
 

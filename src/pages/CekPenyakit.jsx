@@ -1,4 +1,5 @@
 import { Container, VStack, Box, Text, Button, Flex } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import { useContext } from "react";
 import PenyakitContext from "../context/PenyakitContext";
@@ -19,14 +20,14 @@ const CekPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD38") &&
       selectedGejala.find((e) => e.code == "GD37")
     ) {
-      
+      if (selectedPenyakit.find((e) => e.code === "PD08")) {
+        return;
+      }
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD08"));
     }
 
-
     if (selectedGejala.find((e) => e.code == "GD36")) {
-
       arrPenyakit.push(penyakit.find((e) => e.code == "PD07"));
     }
 
@@ -107,7 +108,7 @@ const CekPenyakit = () => {
                 onSelectGejala(e.code, e.name);
               }}
             >
-              Hapus
+               <DeleteIcon />
             </Button>
           </Flex>
         ))}

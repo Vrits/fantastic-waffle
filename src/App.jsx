@@ -8,15 +8,15 @@ import PenyakitProvider from "./context/PenyakitProvider";
 function App() {
   return (
     <>
-    <PenyakitProvider >
+      <PenyakitProvider>
+        <Nav />
 
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/CekPenyakit" element={<CekPenyakit />} />
-        <Route path="/DaftarPenyakit" element={<DaftarPenyakit />} />
-      </Routes>
-    </PenyakitProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/CekPenyakit" element={<CekPenyakit />} />
+          <Route path="/DaftarPenyakit" element={<DaftarPenyakit />} />
+        </Routes>
+      </PenyakitProvider>
     </>
   );
 }
