@@ -17,7 +17,7 @@ const DaftarPenyakit = () => {
   // console.log(penyakit[0].premis.split(" "));
 
   return (
-    <Container maxW={"container.xl"}>
+    <Container maxW={"container.xl"} mb={'4'}>
       <Card>
         <CardHeader>
           <Heading size="md">Daftar Penyakit</Heading>

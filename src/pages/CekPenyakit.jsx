@@ -1,40 +1,12 @@
 import { Container, VStack, Box, Text, Button, Flex } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
-import { useState } from "react";
 import { useContext } from "react";
 import PenyakitContext from "../context/PenyakitContext";
+import GetPenyakit from "../components/Content/GetPenyakit";
 
 const CekPenyakit = () => {
-  const { gejala, selectedGejala, onSelectGejala, penyakit } =
+  const { gejala, selectedGejala, onSelectGejala } =
     useContext(PenyakitContext);
-
-  const [selectedPenyakit, setSelectedPenyakit] = useState([]);
-
-  const getPenyakit = () => {
-    // console.log(selectedGejala);
-    const arrPenyakit = [];
-
-    if (
-      selectedGejala.find((e) => e.code == "GD40") &&
-      selectedGejala.find((e) => e.code == "GD39") &&
-      selectedGejala.find((e) => e.code == "GD38") &&
-      selectedGejala.find((e) => e.code == "GD37")
-    ) {
-      if (selectedPenyakit.find((e) => e.code === "PD08")) {
-        return;
-      }
-
-      arrPenyakit.push(penyakit.find((e) => e.code == "PD08"));
-    }
-
-    if (selectedGejala.find((e) => e.code == "GD36")) {
-      arrPenyakit.push(penyakit.find((e) => e.code == "PD07"));
-    }
-
-    setSelectedPenyakit([...selectedPenyakit, ...arrPenyakit]);
-
-    return;
-  };
 
   return (
     <Container
@@ -108,27 +80,13 @@ const CekPenyakit = () => {
                 onSelectGejala(e.code, e.name);
               }}
             >
-               <DeleteIcon />
+              <DeleteIcon />
             </Button>
           </Flex>
         ))}
       </VStack>
-      <Button
-        colorScheme={"green"}
-        alignSelf={"end"}
-        disabled={selectedGejala.length < 1 ? true : false}
-        mt={"2"}
-        onClick={getPenyakit}
-      >
-        Cek Penyakit
-      </Button>
 
-      <Text>
-        Penyakit yang diderita ={" "}
-        {selectedPenyakit.length < 1
-          ? "Sehat Wal'Afiat"
-          : selectedPenyakit.map((e) => <span key={e.code}>{e.name}, </span>)}
-      </Text>
+      <GetPenyakit />
     </Container>
   );
 };

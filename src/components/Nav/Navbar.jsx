@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Text, Flex, Spacer } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [scroll, setScroll] = useState(false);
@@ -50,7 +50,7 @@ const Nav = () => {
 
       <Flex alignItems="center">
         {pageLink.map((e, i) => (
-          <Link to={e.link} key={`1${i}`}>
+          <NavLink to={e.link} key={`1${i}`} >
             <Text
               fontSize="md"
               mr="10"
@@ -59,10 +59,11 @@ const Nav = () => {
               borderRadius={"lg"}
               transition={".5s"}
               _hover={{ bg: "green.100" }}
+
             >
               {e.name}
             </Text>
-          </Link>
+          </NavLink>
         ))}
         {/* <Text fontSize="md">Daftar Penyakit</Text> */}
       </Flex>
