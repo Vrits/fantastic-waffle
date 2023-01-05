@@ -15,13 +15,10 @@ const GetPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD38") &&
       selectedGejala.find((e) => e.code == "GD37")
     ) {
-      if (selectedPenyakit.find((e) => e.code === "PD08")) {
-        return;
-      }
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD08"));
     }
-    
+
     if (
       selectedGejala.find((e) => e.code == "GD01") &&
       selectedGejala.find((e) => e.code == "GD23") &&
@@ -33,13 +30,10 @@ const GetPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD35") &&
       selectedGejala.find((e) => e.code == "GD36")
     ) {
-      if (selectedPenyakit.find((e) => e.code === "PD07")) {
-        return;
-      }
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD07"));
     }
-    
+
     if (
       selectedGejala.find((e) => e.code == "GD29") &&
       selectedGejala.find((e) => e.code == "GD30") &&
@@ -47,14 +41,11 @@ const GetPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD32") &&
       selectedGejala.find((e) => e.code == "GD33") &&
       selectedGejala.find((e) => e.code == "GD34")
-      ) {
-      if (selectedPenyakit.find((e) => e.code === "PD06")) {
-        return;
-      }
+    ) {
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD06"));
     }
-    
+
     if (
       selectedGejala.find((e) => e.code == "GD01") &&
       selectedGejala.find((e) => e.code == "GD22") &&
@@ -65,28 +56,22 @@ const GetPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD26") &&
       selectedGejala.find((e) => e.code == "GD27") &&
       selectedGejala.find((e) => e.code == "GD28")
-      ) {
-      if (selectedPenyakit.find((e) => e.code === "PD05")) {
-        return;
-      }
+    ) {
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD05"));
     }
-    
+
     if (
       selectedGejala.find((e) => e.code == "GD17") &&
       selectedGejala.find((e) => e.code == "GD18") &&
       selectedGejala.find((e) => e.code == "GD19") &&
       selectedGejala.find((e) => e.code == "GD20") &&
-      selectedGejala.find((e) => e.code == "GD21") 
-      ) {
-      if (selectedPenyakit.find((e) => e.code === "PD04")) {
-        return;
-      }
+      selectedGejala.find((e) => e.code == "GD21")
+    ) {
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD04"));
     }
-    
+
     if (
       selectedGejala.find((e) => e.code == "GD01") &&
       selectedGejala.find((e) => e.code == "GD11") &&
@@ -94,11 +79,8 @@ const GetPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD13") &&
       selectedGejala.find((e) => e.code == "GD14") &&
       selectedGejala.find((e) => e.code == "GD15") &&
-      selectedGejala.find((e) => e.code == "GD16") 
-      ) {
-      if (selectedPenyakit.find((e) => e.code === "PD03")) {
-        return;
-      }
+      selectedGejala.find((e) => e.code == "GD16")
+    ) {
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD03"));
     }
@@ -107,11 +89,8 @@ const GetPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD07") &&
       selectedGejala.find((e) => e.code == "GD08") &&
       selectedGejala.find((e) => e.code == "GD09") &&
-      selectedGejala.find((e) => e.code == "GD10") 
-      ) {
-      if (selectedPenyakit.find((e) => e.code === "PD02")) {
-        return;
-      }
+      selectedGejala.find((e) => e.code == "GD10")
+    ) {
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD02"));
     }
@@ -121,16 +100,15 @@ const GetPenyakit = () => {
       selectedGejala.find((e) => e.code == "GD03") &&
       selectedGejala.find((e) => e.code == "GD04") &&
       selectedGejala.find((e) => e.code == "GD05") &&
-      selectedGejala.find((e) => e.code == "GD06")  
-      ) {
-      if (selectedPenyakit.find((e) => e.code === "PD01")) {
-        return;
-      }
+      selectedGejala.find((e) => e.code == "GD06")
+    ) {
+
 
       arrPenyakit.push(penyakit.find((e) => e.code == "PD01"));
     }
 
-    setSelectedPenyakit([...selectedPenyakit, ...arrPenyakit]);
+    // setSelectedPenyakit([...selectedPenyakit, ...arrPenyakit]);
+    setSelectedPenyakit([...arrPenyakit]);
 
     return;
   };
@@ -147,10 +125,10 @@ const GetPenyakit = () => {
         Cek Penyakit
       </Button>
 
-      <Text>
+      <Text fontSize={"3xl"}>
         Penyakit yang diderita ={" "}
         {selectedPenyakit.length < 1
-          ? "Sehat Wal'Afiat"
+          ? "Tidak ada penyakit yang cocok."
           : selectedPenyakit.map((e, i, arr) => (
               <span key={e.code}>
                 {i + 1 == arr.length ? `${e.name}.` : `${e.name}, `}
